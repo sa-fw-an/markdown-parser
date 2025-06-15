@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to GH-Pages
+    name: Build and Deploy to GH-Pages
 
     runs-on: ubuntu-latest
 
@@ -21,7 +21,7 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Build the project
         run: npm run build
