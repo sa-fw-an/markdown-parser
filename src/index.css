@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #111827; /* Default dark background */
+}
+
+/* Custom scrollbar for dark theme (default) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Light mode scrollbar */
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #1e293b;
+}
+
+.light * {
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+/* Ensure proper text selection in dark mode */
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+.light ::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Fix for textarea and input focus states */
+textarea:focus,
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Ensure proper height calculations */
+.min-h-0 {
+  min-height: 0;
+}
+
+/* Mobile-first responsive text sizing */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Prevent horizontal scroll on small screens */
+body {
+  overflow-x: hidden;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 1024px) {
+  button, 
+  a, 
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
