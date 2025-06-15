@@ -78,7 +78,7 @@ const HomePage: React.FC = () => {
   const loadSampleContent = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("/assets/sample.md");
+      const response = await fetch("./assets/sample.md");
       const content = await response.text();
       setMarkdownContent(content);
       setOriginalContent(content);
